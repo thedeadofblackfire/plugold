@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="fr.dynacare.ihealth"
+    version="0.0.2">
+    <name>iHealth Plugin</name>
+    <description>A plugin to show native alert</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,plugin,alert</keywords>
+    <repo>https://github.com/yourgithubname/cordova-alert-plugin.git</repo>
+    <issue>https://github.com/yourgithubname/cordova-alert-plugin/issues</issue>
+    <js-module src="www/plugin.js" name="IHealth">
+        <clobbers target="cordova.plugins.IHealth" />
+    </js-module>
+	<engines>
+		<engine name="cordova-android" version=">=4.0.0" />
+    </engines>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="IHealthBinder" >
+                <param name="android-package" value="fr.dynacare.poc_ihealth_cross_plugin.IHealthBinder"/>
+            </feature>
+        </config-file>
+        <!--- SOURCES -->
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/IHealthBinder.java"
+                     target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/IHealthBinder.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/IHealthHandler.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/IHealthHandler.java"/>
+        <!--- SOURCES devices -->
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/devices/IHealthAM3S.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/devices/IHealthAM3S.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/devices/IHealthAM4.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/devices/IHealthAM4.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/devices/Parameters.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/devices/UserInfo.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/devices/UserInfo.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/devices/Parameters.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/devices/AMParams.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/devices/AMParams.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/devices/AMControl.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/devices/AMControl.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/devices/AMControlList.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/devices/AMControlList.java"/>
+        <!-- SOURCES MODELS ACTIVITY-->
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/models/activity/AMActivity.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/models/activity/AM3SActivity.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/models/activity/Activity.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/models/activity/Activity.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/models/activity/ActivityEachDatum.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/models/activity/ActivityEachDatum.java"/>
+        <!--- SOURCES eventbus -->
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/eventBus/EventStatus.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/eventbus/EventStatus.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/eventBus/IHealthEvent.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/eventbus/IHealthEvent.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/eventBus/IHealthEventContract.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/eventbus/IHealthEventContract.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/eventBus/IHealthEventType.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/eventbus/IHealthEventType.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/eventBus/ScanData.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/eventbus/ScanData.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/eventBus/ConnectedData.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/eventbus/ConnectedData.java"/>
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/eventBus/Data.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/eventbus/Data.java"/>
+        <!--- SOURCES helpers -->
+        <source-file src="src/main/java/fr/dynacare/poc_ihealth_cross_plugin/helpers/JsonHelper.java"
+            target-dir="src/fr/dynacare/poc_ihealth_cross_plugin/helpers/JsonHelper.java"/>
+        <!--- LIBRAIRES -->
+        <source-file src="libs/btle.jar"
+            target-dir="libs"
+            framework="true" />
+        <source-file src="libs/d2xx.jar"
+            target-dir="libs"
+            framework="true" />
+        <source-file src="libs/iHealthLibrary_2.3.0.25.jar"
+            target-dir="libs"
+            framework="true" />
+        <source-file src="libs/pl2303driver.jar"
+            target-dir="libs"
+            framework="true" />
+        <source-file src="libs/smartlinklib3.6.4_product.jar"
+            target-dir="libs"
+            framework="true" />
+        <source-file src="libs/eventbus-3.0.0.jar"
+            target-dir="libs"
+            framework="true" />
+        <source-file src="libs/gson-2.7.jar"
+            target-dir="libs"
+            framework="true" />
+        <!--- LINKED LIBRARIES -->
+        <source-file src="libs/arm64-v8a/libiHealth.so"
+            target-dir="libs/arm64-v8a"
+            framework="true"/>
+        <source-file src="libs/armeabi/libiHealth.so"
+            target-dir="libs/armeabi"
+            framework="true"/>
+        <source-file src="libs/armeabi-v7a/libiHealth.so"
+            target-dir="libs/armeabi-v7a"
+            framework="true"/>
+        <source-file src="libs/mips/libiHealth.so"
+            target-dir="libs/mips"
+            framework="true"/>
+        <source-file src="libs/mips64/libiHealth.so"
+            target-dir="libs/mips64"
+            framework="true"/>
+        <source-file src="libs/x86/libiHealth.so"
+            target-dir="libs/x86"
+            framework="true"/>
+        <source-file src="libs/x86_64/libiHealth.so"
+            target-dir="libs/x86_64"
+            framework="true"/>
+
+        <!--- PERMISSIONS -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.BLUETOOTH"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        </config-file>
+    </platform>
+</plugin>

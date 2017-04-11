@@ -1,0 +1,28 @@
+{
+  "version": "0.0.2",
+  "name": "fr.dynacare.ihealth",
+  "cordova_name": "Cordova IHealth",
+  "description": "Cordova Plugin",
+  "license": "MIT",
+  "repo": "",
+  "issue": "",
+  "author": {
+    "name": "Felipe Echanique Torres",
+    "email": "felipe.echanique@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedeadofblackfire/plug"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "android",
+    "cordova"
+  ],
+  "platforms": [
+    "android"
+  ],
+  "engines": [],
+  "englishdoc": ""
+}
